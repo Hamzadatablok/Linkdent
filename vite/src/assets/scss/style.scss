@@ -1,0 +1,200 @@
+// color variants
+@use 'sass:meta';
+
+// third party
+@use 'simplebar-react/dist/simplebar.min.css';
+
+// ==============================|| TAP HIGHLIGHT ||============================== //
+
+* {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+// ==============================|| APEXCHART ||============================== //
+
+.apexcharts-legend-series {
+  gap: 8px;
+}
+
+.apexcharts-canvas {
+  .apexcharts-tooltip-series-group.apexcharts-active,
+  .apexcharts-tooltip-series-group:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.apexcharts-menu-icon svg,
+.apexcharts-reset-icon svg,
+.apexcharts-zoom-icon svg,
+.apexcharts-zoomin-icon svg,
+.apexcharts-zoomout-icon svg {
+  fill: var(--palette-text-secondary) !important;
+}
+
+.apexcharts-pan-icon svg {
+  stroke: var(--palette-text-secondary) !important;
+  fill: transparent !important;
+}
+
+.apexcharts-zoom-icon.apexcharts-selected svg {
+  fill: var(--palette-primary-main) !important;
+}
+
+.apexcharts-pan-icon.apexcharts-selected svg {
+  stroke: var(--palette-primary-main) !important;
+}
+
+.apexcharts-toolbar .apexcharts-pan-icon:hover:not(.apexcharts-selected) svg {
+  stroke: var(--palette-grey-600) !important;
+}
+
+.apexcharts-toolbar div:hover:not(.apexcharts-selected):not(.apexcharts-pan-icon) svg {
+  fill: var(--palette-grey-600) !important;
+}
+
+.apexcharts-menu {
+  background-color: var(--palette-background-paper);
+}
+
+.apexcharts-menu-item:hover {
+  background-color: var(--palette-grey-200);
+}
+
+// ==============================|| ANIMATION KEYFRAMES ||============================== //
+
+@keyframes wings {
+  50% { transform: translateY(-40px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes wingsReverse {
+  50% { transform: translateY(40px) scaleX(-1); }
+  100% { transform: translateY(0px) scaleX(-1); }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* =========================================================
+   LINKDENT NEOMORPHISM GLOBAL THEME (النسخة المنقحة والكاملة)
+   ========================================================= */
+
+/* 1. الخلفية العامة */
+body, #root, main, .MuiDrawer-root, .MuiDrawer-paper {
+    background-color: #e0e5ec !important;
+    background-image: none !important;
+}
+
+/* 2. البطاقات والحاويات الرئيسية */
+.MuiPaper-root, .MuiCard-root {
+    background-color: #e0e5ec !important;
+    border: none !important;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6), 
+               -9px -9px 16px rgba(255, 255, 255, 0.5) !important;
+    border-radius: 16px !important;
+}
+
+/* 🔥 3. إصلاح النوافذ المنبثقة (Modals & Dialogs - الصورة 2) 🔥 */
+.MuiDialog-paper {
+    background-color: #e0e5ec !important;
+    box-shadow: 15px 15px 30px rgb(163, 177, 198, 0.7), 
+               -15px -15px 30px rgba(255, 255, 255, 0.9) !important;
+    border: none !important;
+    border-radius: 16px !important;
+}
+.MuiDialogTitle-root, .MuiDialogContent-root, .MuiDialogActions-root {
+    background-color: transparent !important;
+}
+
+/* 🔥 4. إصلاح القوائم المنسدلة للبحث واختيار المريض (Dropdowns - الصورة 1) 🔥 */
+.MuiMenu-paper, 
+.MuiPopover-paper, 
+.MuiAutocomplete-paper,
+.MuiList-root {
+    background-color: #e0e5ec !important;
+    box-shadow: 6px 6px 12px rgb(163, 177, 198, 0.6), 
+               -6px -6px 12px rgba(255, 255, 255, 0.8) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+/* لون نصوص القوائم */
+.MuiMenuItem-root, .MuiAutocomplete-option {
+    color: #334155 !important;
+    font-weight: 600 !important;
+    transition: background-color 0.2s ease;
+}
+
+/* تظليل القائمة عند تمرير الماوس */
+.MuiMenuItem-root:hover, 
+.MuiAutocomplete-option:hover, 
+.MuiAutocomplete-option[aria-selected="true"],
+.MuiAutocomplete-option.Mui-focused {
+    background-color: #d1d9e6 !important; 
+    color: #5e35b1 !important; /* يتحول للبنفسجي عند التحديد */
+}
+
+/* 5. إجبار كافة النصوص في المنصة على اللون الداكن المريح للعين */
+h1, h2, h3, h4, h5, h6, p, span, label, td, th, li,
+.MuiTypography-root,
+.MuiListItemText-primary,
+.MuiInputLabel-root,
+.MuiDialogContentText-root {
+    color: #334155 !important;
+}
+
+/* 6. إصلاح الأزرار وإزالة التوهج الأبيض المزعج */
+.MuiButton-contained {
+    background-color: #e0e5ec !important;
+    color: #5e35b1 !important; 
+    border-radius: 8px !important;
+    box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), 
+               -5px -5px 10px rgba(255, 255, 255, 0.8) !important;
+    transition: all 0.2s ease-in-out !important;
+    font-weight: bold !important;
+    border: none !important;
+}
+.MuiButton-contained:hover {
+    background-color: #e8ecf1 !important;
+}
+.MuiButton-contained:active {
+    box-shadow: inset 4px 4px 6px rgba(163, 177, 198, 0.6), 
+               inset -4px -4px 6px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 7. حقول الإدخال النيومورفية (Inputs) */
+.MuiInputBase-root, 
+.MuiOutlinedInput-root,
+input, textarea, select {
+    background-color: #89a4c9 !important;
+    color: #334155 !important;
+    border-radius: 8px !important;
+    box-shadow: inset 4px 4px 8px rgba(163, 177, 198, 0.4),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.7) !important;
+}
+.MuiOutlinedInput-notchedOutline {
+    border: none !important;
+}
+
+/* 8. القائمة الجانبية (Sidebar) */
+.MuiListItemButton-root.Mui-selected {
+    background-color: #f3e8ff !important;
+    border-radius: 8px !important;
+    margin: 4px 8px !important;
+    box-shadow: inset 2px 2px 5px rgba(163, 177, 198, 0.3) !important;
+}
+.MuiListItemButton-root.Mui-selected *,
+.MuiListItemButton-root.Mui-selected .MuiTypography-root,
+.MuiListItemButton-root.Mui-selected svg {
+    color: #5e35b1 !important; 
+    fill: #5e35b1 !important;
+    font-weight: 900 !important;
+}
+
+/* 9. تفريغ الجداول من أي خلفية شاذة */
+table, thead, tbody, tr, th, td {
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(163, 177, 198, 0.3) !important;
+}
