@@ -7,7 +7,7 @@ import AuthGuard from './AuthGuard';
 import AdminLayout from 'views/super-admin/AdminLayout'; 
 
 // ==============================|| MODULES IMPORT ||============================== //
-const DashboardDefault = Loadable(lazy(() => import('views/dashboard/default')));
+const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
 const Patients = Loadable(lazy(() => import('views/linkdent/Patients')));
 const Settings = Loadable(lazy(() => import('views/linkdent/Settings')));
 const Appointments = Loadable(lazy(() => import('views/linkdent/Appointments')));
